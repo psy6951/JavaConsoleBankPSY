@@ -1,4 +1,4 @@
-package banking.copy;
+package banking_exercise;
 
 import java.util.Scanner;
 

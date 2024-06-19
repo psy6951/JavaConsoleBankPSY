@@ -1,4 +1,4 @@
-package banking.copy;
+package banking_exercise;
 
 
 public class Account {
