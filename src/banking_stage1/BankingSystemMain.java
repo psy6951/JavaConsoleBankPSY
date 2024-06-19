@@ -1,12 +1,13 @@
-package banking_exercise;
+package banking_stage1;
 
 import java.util.Scanner;
 
-public class AccountManager {
-
+public class BankingSystemMain {
+	
 	public static Account accArr[]=new Account[50];
 	public static int accCnt = 0;
 	public static int index = 0;
+	//계좌번호를 조회하다.
    
     
 	public static void showMenu() {
@@ -22,47 +23,16 @@ public class AccountManager {
 	//개좌개설을 위한 함수
 	public static void makeAccount() {
 		System.out.println("==makeAccount()호출됨");
-		
-		
-		System.out.println("***신규계좌개설***");
-		System.out.println("-----계좌선택-----");
-		System.out.println("1.보통계좌");
-		System.out.println("2.신용신뢰계좌");
 		Scanner scanner =new Scanner(System.in);
 		
-
-		int choice = scanner.nextInt(); 
-		scanner.nextLine();
+		System.out.println("***신규계좌개설***");
+		System.out.println("계좌번호:"); String accNum = scanner.nextLine();
+		System.out.println("고객이름:"); String name = scanner.nextLine();
+		System.out.println("잔고:"); int balance = scanner.nextInt();
+		System.out.println("계좌개설이 완료되었습니다.");
 		
-		switch(choice) {
-		case 1:
-			System.out.print("계좌번호:"); String accNum1 = scanner.nextLine();
-			System.out.print("고객이름:"); String name1 = scanner.nextLine();
-			System.out.print("잔고:"); int balance1 = scanner.nextInt();
-			System.out.print("기본이자%(정수형태로입력):"); int interestRate1 = scanner.nextInt();
-			System.out.println("계좌개설이 완료되었습니다.");
-			break;
-		case 2:
-			System.out.print("계좌번호:"); String accNum2 = scanner.nextLine();
-			System.out.print("고객이름:"); String name2 = scanner.nextLine();
-			System.out.print("잔고:"); int balance2 = scanner.nextInt();
-			System.out.print("기본이자%(정수형태로입력):"); int interestRate2 = scanner.nextInt();
-			System.out.print("신용등급(A,B,C등급):"); String creditGrade = scanner.nextLine();
-			System.out.println("계좌개설이 완료되었습니다.");
-			break;
-		}
-		
-		
-		
-		
-		
-//		System.out.println("계좌번호:"); String accNum = scanner.nextLine();
-//		System.out.println("고객이름:"); String name = scanner.nextLine();
-//		System.out.println("잔고:"); int balance = scanner.nextInt();
-//		System.out.println("계좌개설이 완료되었습니다.");
-		
-//		Account account= new Account(accNum, name, balance);
-//		accArr[accCnt++]= account;
+		Account account= new Account(accNum, name, balance);
+		accArr[accCnt++]= account;
 
 	}
 
@@ -120,19 +90,6 @@ public class AccountManager {
 
 	}
 	
-	public static void newAccount() {
-		Scanner scanner =new Scanner(System.in);
-
-		System.out.println("계좌번호:"); String accNum = scanner.nextLine();
-		System.out.println("고객이름:"); String name = scanner.nextLine();
-		System.out.println("잔고:"); int balance = scanner.nextInt();
-		
-		Account account= new Account(accNum, name, balance);
-		accArr[accCnt++]= account;
-	
-	}
-	
-	
 	//전체계좌정보출력을 위한 함수
 	public static void showAccInfo() {
 		System.out.println("==showAccInfo()호출됨");
@@ -146,7 +103,39 @@ public class AccountManager {
 		System.out.println("전체정보가 출력되었습니다");
 	}
 	
-	
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			
+			showMenu();
+			int choice = scanner.nextInt(); 
+
+			switch(choice) {
+
+			case ICustomDefine.MAKE:MAKE:
+				System.out.println("계좌개설 선택");
+				makeAccount();
+				break;	
+			case ICustomDefine.DEPOSIT:
+				System.out.println("입금 선택");
+				depositMoney();
+//				Account account =new Account();
+				break;	
+			case ICustomDefine.WITHDRAW:
+				System.out.println("출금 선택");	
+				withdrawMoney();
+				break;
+			case ICustomDefine.INQUIRE:
+				System.out.println("전체계좌정보 선택");	
+				showAccInfo();
+				break;
+			case ICustomDefine.EXIT:
+				System.out.println("프로그램종료");
+				return;
+			}
+		}
+	}
 }
-
-

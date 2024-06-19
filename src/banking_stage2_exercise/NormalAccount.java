@@ -1,21 +1,21 @@
-package banking_exercise;
+package banking_stage2_exercise;
 
 import java.util.Scanner;
 
 public class NormalAccount extends Account {
 	
 
-	public NormalAccount(String accNum, String name, int deposit, int interstRate) {
-//		super(accNum, name, deposit);
+	public NormalAccount(String accNum, String name, int balance, int interestRate) {
+        super(accNum, name, balance, interestRate);
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt(); 
 		scanner.nextLine();
 		
 			// 계좌 개설을 위한 입력 받기
 			System.out.println("*** 보통계좌 개설 ***");
-			System.out.print("계좌번호: ");
+			System.out.print("계좌번호:");
 			String accNum1 = scanner.nextLine();
-			System.out.print("고객이름: ");
+			System.out.print("고객이름:");
 			String name1 = scanner.nextLine();
 			System.out.print("초기 잔액: ");
 			int balance1 = scanner.nextInt();
@@ -26,13 +26,13 @@ public class NormalAccount extends Account {
 			NormalAccount normalAccount = new NormalAccount(accNum1, name1, balance1, interestRate1);
 			
 			// 계좌 기능 테스트
-			normalAccount.deposit(5000); // 예금
-			normalAccount.withdraw(2000); // 출금
-			normalAccount.calculateInterest(6); // 이자 계산
-			normalAccount.checkBalance(); // 잔액 조회
-			normalAccount.printAccountInfo(); // 계좌 정보 출력
-			normalAccount.showAccountType(); // 계좌 유형 출력
-			
+//			normalAccount.deposit(5000); // 예금
+//			normalAccount.withdraw(2000); // 출금
+//			normalAccount.calculateInterest(6); // 이자 계산
+//			normalAccount.checkBalance(); // 잔액 조회
+//			normalAccount.printAccountInfo(); // 계좌 정보 출력
+//			normalAccount.showAccountType(); // 계좌 유형 출력
+//			
 			scanner.close();
 
 		

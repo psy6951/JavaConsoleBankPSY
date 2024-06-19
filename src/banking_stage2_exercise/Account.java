@@ -1,4 +1,4 @@
-package banking_exercise;
+package banking_stage2_exercise;
 
 
 public class Account {

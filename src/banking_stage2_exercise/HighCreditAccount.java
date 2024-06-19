@@ -1,4 +1,4 @@
-package banking_exercise;
+package banking_stage2_exercise;
 
 import java.util.Scanner;
 
@@ -46,12 +46,12 @@ public class HighCreditAccount extends Account {
 	        HighCreditAccount highCreditAccount = new HighCreditAccount(accNum2, name2, balance2, interestRate2, creditGrade);
 
 	        // 계좌 기능 테스트
-	        highCreditAccount.deposit(10000); // 예금
-	        highCreditAccount.withdraw(5000); // 출금
-	        highCreditAccount.calculateInterest(12); // 이자 계산
-	        highCreditAccount.checkBalance(); // 잔액 조회
-	        highCreditAccount.printAccountInfo(); // 계좌 정보 출력
-	        highCreditAccount.showAccountType(); // 계좌 유형 및 신용 등급 출력
+//	        highCreditAccount.deposit(10000); // 예금
+//	        highCreditAccount.withdraw(5000); // 출금
+//	        highCreditAccount.calculateInterest(12); // 이자 계산
+//	        highCreditAccount.checkBalance(); // 잔액 조회
+//	        highCreditAccount.printAccountInfo(); // 계좌 정보 출력
+//	        highCreditAccount.showAccountType(); // 계좌 유형 및 신용 등급 출력
 
 	        scanner.close();
 		
