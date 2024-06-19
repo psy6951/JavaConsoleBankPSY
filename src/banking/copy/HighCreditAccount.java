@@ -15,7 +15,6 @@ public class HighCreditAccount extends Account {
 	    }
 
 	    // 계좌 유형 조회 메서드 (오버라이드)
-	    @Override
 	    public void showAccountType() {
 	        System.out.println("계좌 유형: " + accountType + ", 신용 등급: " + creditGrade);
 	    }
@@ -24,7 +23,7 @@ public class HighCreditAccount extends Account {
 	    public String getCreditGrade() {
 	        return creditGrade;
 	    }
-	}
+	
 
 	// 메인 클래스
 	    public static void main(String[] args) {
@@ -40,7 +39,7 @@ public class HighCreditAccount extends Account {
 	        int balance2 = scanner.nextInt();
 	        System.out.print("기본 이자율(%): ");
 	        int interestRate2 = scanner.nextInt();
-	        System.out.print("신용 등급(A, B, C 등급): ");
+	        System.out.print("신용 등급(A, B, C 등급):");
 	        String creditGrade = scanner.nextLine();
 
 	        // 신용신뢰계좌 객체 생성

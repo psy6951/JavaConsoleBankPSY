@@ -7,7 +7,7 @@ public class NormalAccount extends Account {
 
 	public NormalAccount(String accNum, String name, int deposit, int interstRate) {
 //		super(accNum, name, deposit);
-		Scanner scanner =new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt(); 
 		scanner.nextLine();
 		
