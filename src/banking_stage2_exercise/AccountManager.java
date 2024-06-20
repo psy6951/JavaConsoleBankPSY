@@ -27,42 +27,77 @@ public class AccountManager {
 	}
 
 	//개좌개설을 위한 함수
-	public void makeAccount() {
+	public void makeAccount(int choice) {
+		String accNumber;
+		String name;
+		int balance;
+		
 		Scanner scanner =new Scanner(System.in);
-
+		
 		System.out.println("==makeAccount()호출됨");
 		System.out.println("***신규계좌개설***");
 		System.out.println("-----계좌선택------");
 		System.out.println("1.보통계좌");
 		System.out.println("2.신용신뢰계좌");
-		String number= scanner.nextLine();
+		int number =scanner.nextInt();
+		scanner.nextLine();
 		
-		if (number.equals("1")) {
-			System.err.println("선택1");
-			System.out.print("계좌번호:"); String accNumber = scanner.nextLine();
-			System.out.print("고객이름:"); String name = scanner.nextLine();
-			System.out.print("잔고:"); int balance = scanner.nextInt();
-			System.out.print("기본이자%(정수형태로입력):"); int interestRate = scanner.nextInt();
-			scanner.nextLine();
-			Account account= new Account(accNumber, name, balance, interestRate, creditGrade);
-			accArr[accCnt++]= account;
-			
-
+		System.out.print("계좌번호: "); String accNumber1 = scanner.nextLine();
+        System.out.print("고객이름: "); String name1 = scanner.nextLine();
+        System.out.print("잔고: "); int balance1 = scanner.nextInt();
+        System.out.print("기본이자%(정수형태로입력): "); int interestRate = scanner.nextInt();
+        scanner.nextLine(); 
+		
+		
+		if(choice==1) {
+			NormalAccount normal  = new NormalAccount(accNumber1, name1, balance1, interestRate);
+			accArr[accCnt++]= normal;
 		}
-		else if(number.equals("2")){
-			System.err.println("선택2");
-			System.out.print("계좌번호:"); String accNumber = scanner.nextLine();
-			System.out.print("고객이름:"); String name = scanner.nextLine();
-			System.out.print("잔고:"); int balance = scanner.nextInt();
-			System.out.print("기본이자%(정수형태로입력):"); int interestRate = scanner.nextInt();
-			System.out.print("신용등급(A,B,C등급):"); String creditGrade = scanner.nextLine();
-			Account account= new Account(accNumber, name, balance, interestRate, creditGrade);
-			scanner.nextLine();
-			accArr[accCnt++]= account;
-
-
+		else if(choice==2) {
+			System.out.println("신용등급(A,B,C등급):"); String creditGrade = scanner.nextLine();
+			HighCreditAccount high = new HighCreditAccount(accNumber1, name1, balance1, interestRate, creditGrade);
+			accArr[accCnt++]= high;
 		}
 		System.out.println("계좌개설이 완료되었습니다.");
+	} ////end of makeAccount
+	
+	
+//	public void makeAccount() {
+//		Scanner scanner =new Scanner(System.in);
+//
+//		System.out.println("==makeAccount()호출됨");
+//		System.out.println("***신규계좌개설***");
+//		System.out.println("-----계좌선택------");
+//		System.out.println("1.보통계좌");
+//		System.out.println("2.신용신뢰계좌");
+//		String number= scanner.nextLine();
+//		
+//		if (number.equals("1")) {
+//			System.err.println("선택1");
+//			System.out.print("계좌번호:"); String accNumber = scanner.nextLine();
+//			System.out.print("고객이름:"); String name = scanner.nextLine();
+//			System.out.print("잔고:"); int balance = scanner.nextInt();
+//			System.out.print("기본이자%(정수형태로입력):"); int interestRate = scanner.nextInt();
+//			scanner.nextLine();
+//			Account account= new Account(accNumber, name, balance, interestRate, creditGrade);
+//			accArr[accCnt++]= account;
+//			
+//
+//		}
+//		else if(number.equals("2")){
+//			System.err.println("선택2");
+//			System.out.print("계좌번호:"); String accNumber = scanner.nextLine();
+//			System.out.print("고객이름:"); String name = scanner.nextLine();
+//			System.out.print("잔고:"); int balance = scanner.nextInt();
+//			System.out.print("기본이자%(정수형태로입력):"); int interestRate = scanner.nextInt();
+//			System.out.print("신용등급(A,B,C등급):"); String creditGrade = scanner.nextLine();
+//			Account account= new Account(accNumber, name, balance, interestRate, creditGrade);
+//			scanner.nextLine();
+//			accArr[accCnt++]= account;
+//
+//
+//		}
+//		System.out.println("계좌개설이 완료되었습니다.");
 
 		
 
@@ -76,7 +111,7 @@ public class AccountManager {
 //		Account account= new Account(accNumber, name, balance, interestRate, creditGrade);
 //		accArr[accCnt++]= account;
 
-	}
+	
 
 	
 	public int retrieveIndexByAccountNumber(String accNumber){
@@ -128,9 +163,7 @@ public class AccountManager {
         }else{
             System.out.println("계좌번호가 존재하지 않습니다.");
         }
-		
 		System.out.println("출금이 완료되었습니다.");
-
 	}
 	
 	//전체계좌정보출력을 위한 함수
@@ -147,6 +180,3 @@ public class AccountManager {
 	}
 	
 }
-
-
- 

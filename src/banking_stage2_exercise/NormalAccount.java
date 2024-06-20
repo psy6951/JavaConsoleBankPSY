@@ -2,12 +2,15 @@ package banking_stage2_exercise;
 
 public class NormalAccount extends Account {
 	
-
+	int interestRate;
+	
 	//생성자
 	public NormalAccount(String accNumber, String name, int balance, int interestRate) {
-		
+		super(accNumber, name, balance);
+		this.interestRate=interestRate;
 	}
 	
+	@Override
 	//입금
 	public void deposit(int amount) {
 		if(amount>0) {
