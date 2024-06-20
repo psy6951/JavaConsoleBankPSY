@@ -2,7 +2,6 @@ package bankingT1;
 
 import java.util.Scanner;
 
-import bankingT1.copy.AccountManager;
 
 public class BankingSystemMain {
 	
