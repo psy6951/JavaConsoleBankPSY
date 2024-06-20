@@ -3,7 +3,7 @@ package banking_stage2_exercise;
 import java.util.Scanner;
 
 public class NormalAccount extends Account {
-	
+	 
 
 	public NormalAccount(String accNum, String name, int balance, int interestRate) {
         super(accNum, name, balance, interestRate);

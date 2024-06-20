@@ -8,3 +8,4 @@ public class NormalAccount extends Account {
 	}
 	
 }
+

@@ -18,7 +18,7 @@ public class AccountManager {
 		System.out.println("5.프로그램종료");
 		System.out.println("메뉴선택>>>");
 	}
-
+ 
 	//개좌개설을 위한 함수
 	public static void makeAccount() {
 		System.out.println("==makeAccount()호출됨");

@@ -1,7 +1,7 @@
 package banking_stage2;
 
 import java.util.Scanner;
-
+ 
 public class HighCreditAccount extends Account {
 	 private String accountType; // 계좌 유형
 	    private String creditGrade; // 신용 등급

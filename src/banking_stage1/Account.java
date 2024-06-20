@@ -10,7 +10,7 @@ public class Account {
 	public static Account accArr[]=new Account[50];
 	public static int accCnt = 0;
 	
-
+ 
 
 	public Account() {}
 	public Account(String accNum, String name, int balance) {

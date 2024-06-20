@@ -24,7 +24,7 @@ public class HighCreditAccount extends Account {
 	        return creditGrade;
 	    }
 	 
-
+ 
 	// 메인 클래스
 	    public static void main(String[] args) {
 	        Scanner scanner = new Scanner(System.in);

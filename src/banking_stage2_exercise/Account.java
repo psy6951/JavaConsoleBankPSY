@@ -1,6 +1,6 @@
 package banking_stage2_exercise;
 
-
+ 
 public class Account {
 	
 	public String accNum;

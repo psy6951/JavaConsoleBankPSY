@@ -8,7 +8,7 @@ public class BankingSystemMain {
 	public static int accCnt = 0;
 	public static int index = 0;
 	//계좌번호를 조회하다.
-   
+    
     
 	public static void showMenu() {
 		System.out.println("----- Menu-----");
