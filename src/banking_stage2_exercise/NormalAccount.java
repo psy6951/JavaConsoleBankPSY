@@ -4,38 +4,33 @@ import java.util.Scanner;
 
 public class NormalAccount extends Account {
 	 
+	public static int normalAccCnt = 0;
 
 	public NormalAccount(String accNum, String name, int balance, int interestRate) {
         super(accNum, name, balance, interestRate);
-		Scanner scanner = new Scanner(System.in);
-		int choice = scanner.nextInt(); 
-		scanner.nextLine();
+//		Scanner scanner = new Scanner(System.in);
+//		int choice = scanner.nextInt(); 
+//		 scanner.nextLine();
 		
-			// 계좌 개설을 위한 입력 받기
-			System.out.println("*** 보통계좌 개설 ***");
-			System.out.print("계좌번호:");
-			String accNum1 = scanner.nextLine();
-			System.out.print("고객이름:");
-			String name1 = scanner.nextLine();
-			System.out.print("초기 잔액: ");
-			int balance1 = scanner.nextInt();
-			System.out.print("기본 이자율(%): ");
-			int interestRate1 = scanner.nextInt();
+//			// 계좌 개설을 위한 입력 받기
+//			System.out.println("*** 보통계좌 개설 ***");
+//			System.out.print("계좌번호:");
+//			String accNum1 = scanner.nextLine();
+//			System.out.print("고객이름:");
+//			String name1 = scanner.nextLine();
+//			System.out.print("초기 잔액: ");
+//			int balance1 = scanner.nextInt();
+//			System.out.print("기본 이자율(%): ");
+//			int interestRate1 = scanner.nextInt();
 			
-			// 보통계좌 객체 생성
-			NormalAccount normalAccount = new NormalAccount(accNum1, name1, balance1, interestRate1);
+			// 보통계좌 인스턴스 생성
+			NormalAccount normalAccount = new NormalAccount(accNum, name, balance, interestRate);
 			
-			// 계좌 기능 테스트
-//			normalAccount.deposit(5000); // 예금
-//			normalAccount.withdraw(2000); // 출금
-//			normalAccount.calculateInterest(6); // 이자 계산
-//			normalAccount.checkBalance(); // 잔액 조회
-//			normalAccount.printAccountInfo(); // 계좌 정보 출력
-//			normalAccount.showAccountType(); // 계좌 유형 출력
-//			
-			scanner.close();
+			Account normalAccArr[]=new NormalAccount[50];
 
-		
+			normalAccArr[normalAccCnt++]=normalAccount;
+			
+			
 		
 //		Scanner scanner =new Scanner(System.in);
 //		int choice = scanner.nextInt(); 
@@ -63,6 +58,5 @@ public class NormalAccount extends Account {
 	}
 
 	
-
 
 }

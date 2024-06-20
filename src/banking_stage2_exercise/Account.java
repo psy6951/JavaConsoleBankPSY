@@ -18,6 +18,31 @@ public class Account {
 	}
 	
 	
+	public String getAccNum() {
+		return accNum;
+	}
+	public void setAccNum(String accNum) {
+		this.accNum = accNum;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public int getInterestRate() {
+		return interestRate;
+	}
+	public void setInterestRate(int interestRate) {
+		this.interestRate = interestRate;
+	}
+	
 	
 	public void deposit(int money) {
 		if(money>0) {
@@ -38,7 +63,6 @@ public class Account {
 	}
 	
 	
-	
 	public void showAccount() {
 		System.out.println("계좌번호>"+ this.accNum);
 		System.out.println("고객이름>"+ this.name);
@@ -46,9 +70,6 @@ public class Account {
 		System.out.println("----------");
 	}
 	
-	public String getAccountNumber() {
-        return accNum;
-	}
 	
 }
 
