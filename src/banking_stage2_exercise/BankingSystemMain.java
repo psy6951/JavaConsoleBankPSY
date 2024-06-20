@@ -16,14 +16,14 @@ public class BankingSystemMain {
 
 			switch(choice) {
 
-			case ICustomDefine.MAKE:MAKE:
+			case ICustomDefine.MAKE:
 				System.out.println("계좌개설 선택");
-			am.makeAccount();
+				am.makeAccount();
 				break;	
 			case ICustomDefine.DEPOSIT:
 				System.out.println("입금 선택");
 				am.depositMoney();
-//				Account account =new Account();
+				Account account =new Account();
 				break;	
 			case ICustomDefine.WITHDRAW:
 				System.out.println("출금 선택");	

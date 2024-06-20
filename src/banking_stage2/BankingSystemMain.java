@@ -113,7 +113,7 @@ public class BankingSystemMain {
 
 			switch(choice) {
 
-			case ICustomDefine.MAKE:MAKE:
+			case ICustomDefine.MAKE:
 				System.out.println("계좌개설 선택");
 				makeAccount();
 				break;	
