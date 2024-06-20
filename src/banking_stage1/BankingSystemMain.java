@@ -7,7 +7,6 @@ public class BankingSystemMain {
 	public static Account accArr[]=new Account[50];
 	public static int accCnt = 0;
 	public static int index = 0;
-	//계좌번호를 조회하다.
     
     
 	public static void showMenu() {
@@ -22,9 +21,8 @@ public class BankingSystemMain {
 
 	//개좌개설을 위한 함수
 	public static void makeAccount() {
-		System.out.println("==makeAccount()호출됨");
 		Scanner scanner =new Scanner(System.in);
-		
+		System.out.println("==makeAccount()호출됨");
 		System.out.println("***신규계좌개설***");
 		System.out.println("계좌번호:"); String accNum = scanner.nextLine();
 		System.out.println("고객이름:"); String name = scanner.nextLine();
