@@ -1,44 +1,49 @@
-package banking_stage3_exercise;
+package banking_stage4;
 
 import java.util.Scanner;
 
-public class NormalAccount extends Account {
+public class HighCreditAccount extends Account {
 	
 	int interestRate;
+	String creditGrade;
 	
 	//생성자
-	public NormalAccount(String accNumber, String name, int balance, int interestRate) {
+	public HighCreditAccount(String accNumber, String name, int balance, int interestRate, String creditGrade) {
 		super(accNumber, name, balance);
 		this.interestRate=interestRate;
+		this.creditGrade =creditGrade;
 	}
 	
 	@Override
 	//입금
 	public void deposit(int amount) {
 		
-//		try {
-			if(amount>0 && amount%500==0) {
-				balance = balance +(balance*interestRate/100)+amount;
-				System.out.println("입금이 완료되었습니다.");
+		if(amount>0 && amount%500==0) {
+			if(creditGrade.equalsIgnoreCase("A")){
+				balance += (balance*interestRate/100)+(balance*7/100)+amount;
 			}
-			else if(amount<=0){
-				System.out.println("입금액은 0보다 커야 합니다.");
-			}
-			else if(amount%500!=0){
-				System.out.println("입금은 500원 단위로만 가능합니다.");
-			}
-			else {
-				System.out.println("입금할 금액을 확인해주세요");
-			}
-//		}
-//		catch(NumberFormatException e) {
-//			System.out.println("나이는 숫자로만 입력해야 합니다.");
-//			System.out.println("예외메세지:"+e.getMessage());
-//			e.printStackTrace();
-//		}
+			else if(creditGrade.equalsIgnoreCase("B")){
+				balance += (balance*interestRate/100)+(balance*4/100)+amount;
+			} 
+			else if(creditGrade.equalsIgnoreCase("C")){
+				balance += (balance*interestRate/100)+(balance*2/100)+amount;
+			} 
+		}
+		else if(amount<=0){
+			System.out.println("입금액은 0보다 커야 합니다.");
+		}
+		else if(amount%500!=0){
+			System.out.println("입금은 500원 단위로만 가능합니다.");
+		}
+		else {
+			System.out.println("입금할 금액을 확인해주세요");
+		}
+
 	}
 	
+	
 	//출금
+	
 	public void withdraw(int amount) {
 		if(amount>0 && balance >= amount && amount%1000==0) {
 			balance -= amount;
@@ -57,6 +62,9 @@ public class NormalAccount extends Account {
 				System.out.println("출금이 취소되었습니다.");
 			}
 		}
+		else if(amount<=0){
+			System.out.println("출금액은 0보다 커야 합니다.");
+		}
 		else if(amount%1000!=0){
 			System.out.println("출금은 1000원 단위로만 가능합니다.");
 		}
@@ -64,14 +72,13 @@ public class NormalAccount extends Account {
 			System.out.println("출금할 금액을 확인해주세요");
 		}
 	}
-	//
 	//계좌정보출력
 	public void showAccount() {
 		super.showAccount();
 		System.out.println("기본이자>"+ this.interestRate);
+		System.out.println("신용등급>"+ this.creditGrade);
 	}
-
 	
+		
+		
 }
-
- 

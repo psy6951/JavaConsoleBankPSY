@@ -7,7 +7,7 @@ public class BankingSystemMain {
 	public static Account accArr[]=new Account[50];
 	public static int accCnt = 0;
 	public static int index = 0;
-    
+
     
 	public static void showMenu() {
 		System.out.println("----- Menu-----");

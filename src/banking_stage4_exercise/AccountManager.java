@@ -1,4 +1,4 @@
-package banking_stage3_exercise;
+package banking_stage4_exercise;
 
 import java.util.Scanner;
 
@@ -18,13 +18,14 @@ public class AccountManager {
 	
     
 	public void showMenu() {
-		System.out.println("----- Menu-----");
-		System.out.println("1.계좌개설");
-		System.out.println("2.입  금");
-		System.out.println("3.출  금");
-		System.out.println("4.계좌정보출력");
+		System.out.println("=======================Menu======================");
+		System.out.print("1.계좌개설   ");
+		System.out.print("2.입금   ");
+		System.out.print("3.출금   ");
+		System.out.print("4.계좌정보출력   ");
 		System.out.println("5.프로그램종료");
-		System.out.println("메뉴선택>>>");
+		System.out.println("=================================================");
+		System.out.print("메뉴선택>>>");
 	}
 
 	//개좌개설을 위한 함수
@@ -40,6 +41,8 @@ public class AccountManager {
 		System.out.println("-----계좌선택------");
 		System.out.println("1.보통계좌");
 		System.out.println("2.신용신뢰계좌");
+		System.out.print("선택: ");
+
 		int accountType = scanner.nextInt();
 		scanner.nextLine();
 		
@@ -82,9 +85,9 @@ public class AccountManager {
 	
 		System.out.println("***입   금***");
 		System.out.println("계좌번호와 입금할 금액을 입력하세요");
-		System.out.println("계좌번호:"); String accNumber = scanner.nextLine();
-		System.out.println("입금액:"); int amount = scanner.nextInt();
-		scanner.nextLine();
+		System.out.print("계좌번호: "); String accNumber = scanner.nextLine();
+		System.out.print("입금액: "); int amount = scanner.nextInt();
+//		scanner.nextLine();
 		
 		
 		int index = retrieveIndexByAccountNumber(accNumber);
@@ -106,8 +109,8 @@ public class AccountManager {
 
 		System.out.println("***출   금***");
 		System.out.println("계좌번호와 출금할 금액을 입력하세요");
-		System.out.println("계좌번호:");  String accNumber = scanner.nextLine();
-		System.out.println("출금액:"); int amount = scanner.nextInt();
+		System.out.print("계좌번호: ");  String accNumber = scanner.nextLine();
+		System.out.print("출금액: "); int amount = scanner.nextInt();
 		scanner.nextLine();
 		
 		
