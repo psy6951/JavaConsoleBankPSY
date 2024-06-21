@@ -1,4 +1,4 @@
-package banking_stage2_exercise;
+package banking_stage3_exercise;
 
 public class NormalAccount extends Account {
 	
@@ -15,28 +15,31 @@ public class NormalAccount extends Account {
 	public void deposit(int amount) {
 		if(amount>0) {
 			balance = balance +(balance*interestRate/100)+amount;
-			System.out.println(amount +"원 입금되었습니다.");
 		}
 		else {
 			System.out.println("입금할 금액을 확인해주세요");
 		}
+		System.out.println("입금이 완료되었습니다.");
+
 	}
 	
 	//출금
 	public void withdraw(int amount) {
 		if(amount>0 && balance >= amount) {
 			balance -= amount;
-			System.out.println(amount +"원 출금되었습니다.");
 
 		}
 		else {
 			System.out.println("출금할 금액을 확인해주세요");
 		}
 	}
-	
-	
 	//
-	
+	//계좌정보출력
+	public void showAccount() {
+		super.showAccount();
+		System.out.println("기본이자>"+ this.interestRate);
+	}
+
 	
 }
 

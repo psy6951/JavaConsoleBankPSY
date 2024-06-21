@@ -1,4 +1,4 @@
-package banking_stage2_exercise;
+package banking_stage3;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class BankingSystemMain {
 
 			case ICustomDefine.MAKE:
 				System.out.println("계좌개설 선택");
-				am.makeAccount(choice);
+				am.makeAccount();
 				break;	
 			case ICustomDefine.DEPOSIT:
 				System.out.println("입금 선택");

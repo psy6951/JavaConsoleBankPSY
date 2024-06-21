@@ -1,4 +1,4 @@
-package banking_stage2;
+package banking_stage3;
 
 public class NormalAccount extends Account {
 	
