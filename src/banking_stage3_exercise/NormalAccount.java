@@ -15,20 +15,27 @@ public class NormalAccount extends Account {
 	@Override
 	//입금
 	public void deposit(int amount) {
-		if(amount>0 && amount%500==0) {
-			balance = balance +(balance*interestRate/100)+amount;
-			System.out.println("입금이 완료되었습니다.");
-		}
-		else if(amount<=0){
-			System.out.println("입금액은 0보다 커야 합니다.");
-		}
-		else if(amount%500!=0){
-			System.out.println("입금은 500원 단위로만 가능합니다.");
-		}
-		else {
-			System.out.println("입금할 금액을 확인해주세요");
-		}
-
+		
+//		try {
+			if(amount>0 && amount%500==0) {
+				balance = balance +(balance*interestRate/100)+amount;
+				System.out.println("입금이 완료되었습니다.");
+			}
+			else if(amount<=0){
+				System.out.println("입금액은 0보다 커야 합니다.");
+			}
+			else if(amount%500!=0){
+				System.out.println("입금은 500원 단위로만 가능합니다.");
+			}
+			else {
+				System.out.println("입금할 금액을 확인해주세요");
+			}
+//		}
+//		catch(NumberFormatException e) {
+//			System.out.println("나이는 숫자로만 입력해야 합니다.");
+//			System.out.println("예외메세지:"+e.getMessage());
+//			e.printStackTrace();
+//		}
 	}
 	
 	//출금

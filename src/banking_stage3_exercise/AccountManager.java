@@ -79,12 +79,13 @@ public class AccountManager {
 	public void depositMoney() {
 		System.out.println("==depositMoney()호출됨");
 		Scanner scanner =new Scanner(System.in);
-		
+	
 		System.out.println("***입   금***");
 		System.out.println("계좌번호와 입금할 금액을 입력하세요");
 		System.out.println("계좌번호:"); String accNumber = scanner.nextLine();
 		System.out.println("입금액:"); int amount = scanner.nextInt();
 		scanner.nextLine();
+		
 		
 		int index = retrieveIndexByAccountNumber(accNumber);
         if(index != -1){           
@@ -94,6 +95,7 @@ public class AccountManager {
             System.out.println("계좌번호가 존재하지 않습니다.");
             return;
         }
+       
 	}
 	
 
