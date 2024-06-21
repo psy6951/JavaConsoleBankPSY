@@ -1,5 +1,8 @@
-package bankingT2;
+package bankingT3;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -82,12 +85,63 @@ public class AccountManager {
 //			accArr[i].showAccount();
 //		}
 		
-		for(Account account : hashSet) {
-			account.showAccount();
+		for(Account ac : hashSet) {
+			ac.showAccount();
 		}
 	}  
 
-	
+	///컬렉션에 저장된 정보를 Text파일로 저장하기
+	public void saveInfoTxt() {
+		
+		try {
+		//입력스트림 없이 출력스트림만 있는 클래스
+		PrintWriter out = new PrintWriter(new FileWriter("src/bankingT2/AutoSaveAccount.txt"));
+		
+		//앞에서 txt파일 쪽으로 생성한 스트림을 통해 내용을 입력
+		for(Account ac :hashSet) {
+			out.println(ac);
+		}
 
+		System.out.println("자동저장 되었습니다");
+		//스트림 종료
+		out.close();
+		}
+		catch(IOException e) {
+			System.out.println("Text파일로 저장 중 예외발생");
+			e.printStackTrace();
+		}
+	}
 
+	public void dataSaveOption(AutoSaver as) {
+		System.out.println("저장옵션 선택");
+		System.out.print("1.On, 2.Off");
+		Scanner scanner=new Scanner(System.in);
+		int menu = scanner.nextInt();
+		
+		if(menu==1) {
+			if(!as.isAlive()) {
+				//데몬쓰레드로 만든 후 쓰레드 시작
+				as.setDaemon(true);
+				as.start();
+				System.out.println("자동저장을 시작합니다");
+			}
+			else {
+				System.out.println("자동저장이 이미 실행중입니다.");
+			}
+		}
+		
+		else if(menu==2) {
+			if(!as.isAlive()) {
+				as.interrupt();
+				System.out.println("자동저장을 종료합니다");
+			}
+			else {
+				System.out.println("자동저장이 이미 실행중입니다.");
+			}
+		}
+		else {
+			System.out.println("메뉴 입력을 잘못하셨습니다.");
+		}
+
+	}
 }

@@ -1,4 +1,4 @@
-package bankingT2;
+package bankingT3;
 
 import java.util.Scanner;
 
@@ -9,6 +9,8 @@ public class BankingSystemMain {
 		
 		Scanner scanner = new Scanner(System.in);
 		AccountManager am = new AccountManager();
+		
+		AutoSaver as = null;
 		
 		while(true) {
 			
@@ -36,6 +38,26 @@ public class BankingSystemMain {
 			case ICustomDefine.EXIT:
 				System.out.println("종료 선택");
 				return;
+			case ICustomDefine.AUTO_SAVE:
+				System.out.println("자동저장 선택");
+				//파일저장 확인하기
+//				am.saveInfoTxt();
+				
+				try {
+				/*인스턴스가 생성되지 않은 상태에서 isAlive()를 호출하면
+				예외가 발생하므로 catch절에서 인스턴스를 생성한다.*/
+				if(!as.isAlive()) {
+					as= new AutoSaver(am);
+					}
+				}
+				catch (Exception e) {
+					System.out.println("AutoSaver 인스턴스 생성되지 않음");
+					as= new AutoSaver(am);
+				}
+				
+				System.out.println("쓰레드="+as);
+				//매니저클래스의 메서드를 호츨하면서 쓰레드 인스턴스를 전달
+				am.dataSaveOption(as);
 			}
 		}
 	}

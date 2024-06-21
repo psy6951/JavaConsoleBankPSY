@@ -1,4 +1,4 @@
-package bankingT2;
+package bankingT3;
 
 public class Account {
 	// 계좌번호(String형), 이름(String형), 잔액(int형) 
@@ -43,5 +43,12 @@ public class Account {
 		else {
 			return false;
 		}
+	}
+	@Override
+	public String toString() {
+		String str= "계좌번호:"+accNumber+","
+					+"이름:"+name+ ","
+					+"잔고:"+balance;
+		return str;
 	}
 }
