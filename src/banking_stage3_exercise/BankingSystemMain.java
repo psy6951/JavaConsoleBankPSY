@@ -31,7 +31,7 @@ public class BankingSystemMain {
 				break;
 			case ICustomDefine.INQUIRE:
 				System.out.println("전체계좌정보 선택");	
-				am.showAccInfo();
+				am.showAccInfo();  
 				break;
 			case ICustomDefine.EXIT:
 				System.out.println("프로그램종료");

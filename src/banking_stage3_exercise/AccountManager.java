@@ -116,7 +116,6 @@ public class AccountManager {
             System.out.println("계좌번호가 존재하지 않습니다.");
             return;
         }
-		System.out.println("출금이 완료되었습니다.");
 	}
 	
 	//전체계좌정보출력을 위한 함수
