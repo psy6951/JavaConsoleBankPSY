@@ -26,7 +26,6 @@ public class BankingSystemMain {
 				case ICustomDefine.DEPOSIT:
 					System.out.println("입금 선택");
 					am.depositMoney();
-	//				Account account =new Account();
 					break;	
 				case ICustomDefine.WITHDRAW:
 					System.out.println("출금 선택");	
