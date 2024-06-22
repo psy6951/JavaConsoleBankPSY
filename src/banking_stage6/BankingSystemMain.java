@@ -10,6 +10,7 @@ public class BankingSystemMain {
 		
 		Scanner scanner = new Scanner(System.in);
 		AccountManager am = new AccountManager();
+		am.readFile();
 		
 		while(true) {
 			
@@ -40,9 +41,9 @@ public class BankingSystemMain {
 					am.deleteAccInfo();  
 					break;
 				case ICustomDefine.EXIT:
+					am.saveFile();
 					System.out.println("프로그램종료");
 					return;
-					
 				default:
 					MenuSelectException ex = new MenuSelectException();
 					throw ex;

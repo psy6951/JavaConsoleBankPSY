@@ -1,17 +1,22 @@
 package banking_stage6;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class AccountManager {
-	HashSet<Account> hashSet = new HashSet<Account>();
 //	public Account accArr[]=new Account[50];
 //	public static int accCnt = 0;
+	HashSet<Account> hashSet = new HashSet<Account>();
 	Account account=null;
-	
-	
-//	public AccountManager() {}
+
+	private final File dataFile = new File("src/banking_stage5_exercise/AccountInfo.obj");
+
 	
 	public AccountManager() {
 	   }
@@ -125,8 +130,6 @@ public class AccountManager {
 		System.out.print("입금액: "); int amount = scanner.nextInt();
 //		scanner.nextLine();
 		
-		
-		
 //		int index = retrieveIndexByAccountNumber(accNumber);
 //        if(index != -1){           
 //        	accArr[index].deposit(amount);
@@ -145,7 +148,7 @@ public class AccountManager {
           System.out.println("계좌번호가 존재하지 않습니다.");
           return;
       }
-       
+		
 	}
 	
 
@@ -224,4 +227,41 @@ public class AccountManager {
 		
 	}
 	
+	public void readFile() {
+		if(dataFile.exists()==false) {
+			System.out.println("AccountInfo.obj 파일없음");
+			return;
+		}
+		
+		try {
+			FileInputStream file = new FileInputStream(dataFile);
+			ObjectInputStream in = new ObjectInputStream(file);
+			while(true) {
+				Account info = (Account)in.readObject();
+				if(info==null) {
+					break;
+				}
+				hashSet.add(info);
+			}
+		}
+		catch(Exception e) {
+			System.out.println("AccountInfo.obj 복원완료");
+		}
+	}
+	public void saveFile() {
+		try {
+			FileOutputStream file = new FileOutputStream(dataFile);
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			Iterator<Account> itr= hashSet.iterator();
+			
+			while(itr.hasNext()) {
+				out.writeObject(itr.next());
+			}
+			out.close();
+			System.out.println("AccountInfo.obj 파일로 저장되었습니다.");
+		}
+		catch(Exception e) {
+			System.out.println("AccountInfo.obj 저장중 예외발생");
+		}
+	}
 }
