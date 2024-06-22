@@ -1,8 +1,9 @@
-package banking_stage5_exercise;
+package banking_stage6_ex;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Account {
+public class Account implements Serializable{
 	// 계좌번호(String형), 이름(String형), 잔액(int형) 
 	String accNumber;
 	String name;
