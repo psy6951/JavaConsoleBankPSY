@@ -32,8 +32,12 @@ public class BankingSystemMain {
 					am.withdrawMoney();
 					break;
 				case ICustomDefine.INQUIRE:
-					System.out.println("전체계좌정보 선택");	
+					System.out.println("계좌정보출력 선택");	
 					am.showAccInfo();  
+					break;
+				case ICustomDefine.DELETE:
+					System.out.println("계좌정보삭제 선택");	
+					am.deleteAccInfo();  
 					break;
 				case ICustomDefine.EXIT:
 					System.out.println("프로그램종료");
@@ -46,7 +50,7 @@ public class BankingSystemMain {
 				}
 			}
 			catch (MenuSelectException e) {
-				System.out.println("메뉴는 1~5까지의 숫자로 입력하세요");
+				System.out.println("메뉴는 1~6까지의 숫자로 입력하세요");
 			}
 			catch(InputMismatchException e){
 				System.out.println("숫자로만 입력하세요");

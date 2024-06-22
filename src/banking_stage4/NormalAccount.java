@@ -35,6 +35,7 @@ public class NormalAccount extends Account {
 	public void withdraw(int amount) {
 		if(amount>0 && balance >= amount && amount%1000==0) {
 			balance -= amount;
+			System.out.println("출금이 완료되었습니다.");
 		}
 		else if (balance<amount){
 			System.out.println("잔고가 부족합니다. 금액전체를 출금할까요?(Y/N)");
@@ -64,7 +65,7 @@ public class NormalAccount extends Account {
 	//계좌정보출력
 	public void showAccount() {
 		super.showAccount();
-		System.out.println("기본이자>"+ this.interestRate+"%");
+		System.out.println("기본이자> "+ this.interestRate+"%");
 	}
 
 	
