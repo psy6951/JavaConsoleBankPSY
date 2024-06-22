@@ -1,4 +1,4 @@
-package banking_stage4_exercise;
+package banking_stage5_exercise;
 
 public interface ICustomDefine {
 	

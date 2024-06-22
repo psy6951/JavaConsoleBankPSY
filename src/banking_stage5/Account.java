@@ -1,4 +1,4 @@
-package banking_stage4_exercise;
+package banking_stage5;
 
 import java.util.Scanner;
 
