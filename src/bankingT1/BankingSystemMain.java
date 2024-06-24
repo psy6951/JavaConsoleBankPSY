@@ -1,4 +1,5 @@
 package bankingT1;
+//1단계-구조잡기
 
 import java.util.Scanner;
 

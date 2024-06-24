@@ -1,4 +1,5 @@
 package bankingT2;
+//4단계-컬렉션(Hashset)
 
 public class Account {
 	// 계좌번호(String형), 이름(String형), 잔액(int형) 
